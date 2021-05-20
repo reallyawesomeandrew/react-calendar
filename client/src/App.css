@@ -1,0 +1,154 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+/* calendar */
+#header{
+    text-align: center;
+    color: white;
+    background-color: #333;
+    padding: 0.5rem;
+    width: 100%;
+    top: 0%;
+}
+#header h1{
+    margin: 0;
+}
+main{
+    position: absolute;
+    height: calc(100% - 53px);
+    overflow-y: scroll;
+    width: 100%;
+}
+.loading-container{
+    height: calc(100% - 53px);
+}
+#month{
+    border: 0;
+    font-size: inherit;
+    font-weight: bold;
+  }
+#calendar-headers{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;    
+}
+.week-days{
+    background-color: lightgray;
+    text-transform: uppercase;
+    text-align:center;
+    padding: 5px;
+}
+#calendar-main{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 3px;
+    width: 100%;
+}
+.calendar-day{
+    height: 150px;
+    border: 1px solid black;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.event{
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #b8ffbc;
+    cursor: pointer;
+    padding: 5px;
+}
+.event-check{
+    color: green;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.real-event-x{
+    color: red;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.event-check, .real-event-x{
+    margin: 5px;
+}
+.event:hover .event-check{
+    opacity: 1;
+}
+.event:hover .real-event-x{
+    opacity: 1;
+}
+.light-red{
+    background-color: #FFC2C2;
+}
+.green-txt{
+    color: green;
+}
+/*form*/
+.add-event-container{
+    display: none;
+}
+.add-event-container:focus{
+    display: block;
+}
+.event-name{
+    width: 90%;
+    outline: 0;
+}
+.event-x{
+    border: 0;
+    text-align: center;
+    width: 10%;
+    background-color: lightgreen;
+    color: white;
+}
+.calendar-day:hover .add-event-container{
+    display: flex;
+}
+.event-subject-select{
+    width: fit-content;
+}
+.event-subject-select:focus {
+    min-width: 150px;
+    width: auto;
+}
+/* event reminders*/
+.event-reminder{
+    padding: 0.5rem;
+    margin: 15px 0;
+    border-radius: 10px;
+    width: 80%;
+}
+.not-completed{
+    background-color: lightpink;
+}
+.completed{
+    text-decoration: line-through;
+    background-color: lightgreen;
+}
+/*loading*/
+.loading-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255, 0.9);
+    height: 100%;
+    width: 100%;
+}
+.loading-icon{
+    width: 128px;
+    height: 128px;
+}
+.svg path{
+    fill: rgb(2,205,255);
+}
+/*error*/
+.error {
+    width: 400px;
+    margin: auto;
+    color: #a1a1a1;
+    font-size: 40px;
+}
